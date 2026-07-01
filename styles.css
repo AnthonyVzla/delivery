@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #1d2632;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #eef3fb 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(31, 41, 55, 0.08);
+  margin-bottom: 20px;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+main {
+  display: grid;
+  gap: 20px;
+}
+
+.auth-card,
+.panel {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(31, 41, 55, 0.08);
+}
+
+.auth-card {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.auth-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #d8dee8;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #f9fbff;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5b8df9;
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  padding: 14px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: #3d5bff;
+  color: #fff;
+}
+
+.secondary {
+  background: #eef2ff;
+  color: #2f3a5a;
+}
+
+.danger {
+  background: #ff5f6d;
+  color: #fff;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.auth-switch a {
+  color: #3d5bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.nav-btn {
+  flex: 1 1 170px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #eef2ff;
+  color: #1f2a44;
+  font-weight: 700;
+}
+
+.nav-btn.active {
+  background: #3d5bff;
+  color: white;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+}
+
+.panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.restaurant-card,
+.menu-card,
+.order-card,
+.small-card,
+.store-card {
+  border-radius: 20px;
+  padding: 18px;
+  background: #f8fbff;
+  border: 1px solid #e8eff8;
+}
+
+.restaurant-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.order-card {
+  display: grid;
+  gap: 14px;
+}
+
+.order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e8eff8;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-summary {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+.empty-state {
+  padding: 18px;
+  color: #57647a;
+  background: #f7f9fe;
+  border-radius: 16px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 240px;
+  border-radius: 16px;
+  padding: 14px 18px;
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.toast.success {
+  background: #3d5bff;
+}
+
+.toast.error {
+  background: #ff4f6d;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 16px;
+  }
+  .topbar,
+  .auth-card,
+  .panel {
+    padding: 18px;
+  }
+  .auth-grid,
+  .cards-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    flex-direction: column;
+  }
+}

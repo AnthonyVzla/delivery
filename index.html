@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">Delivery Pro</div>
+      <div class="top-right">
+        <span id="statusBar">Cargando...</span>
+        <button id="logoutBtn" class="secondary hidden">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="auth-screen" class="auth-card hidden">
+        <div class="auth-grid">
+          <div id="loginPanel">
+            <h2 id="authTitle">Iniciar sesión</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail">Correo</label>
+                <input id="loginEmail" type="email" placeholder="ejemplo@correo.com" required />
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Contraseña</label>
+                <input id="loginPassword" type="password" placeholder="********" required />
+              </div>
+              <div class="auth-actions">
+                <button type="submit" class="primary">Entrar</button>
+              </div>
+            </form>
+          </div>
+          <div id="registerPanel" class="hidden">
+            <h2>Registro</h2>
+            <form id="registerForm">
+              <div class="form-group">
+                <label for="registerName">Nombre completo</label>
+                <input id="registerName" type="text" placeholder="Juan Pérez" required />
+              </div>
+              <div class="form-group">
+                <label for="registerPhone">Teléfono</label>
+                <input id="registerPhone" type="tel" placeholder="099123456" required />
+              </div>
+              <div class="form-group">
+                <label for="registerEmail">Correo</label>
+                <input id="registerEmail" type="email" placeholder="ejemplo@correo.com" required />
+              </div>
+              <div class="form-group">
+                <label for="registerPassword">Contraseña</label>
+                <input id="registerPassword" type="password" placeholder="********" required />
+              </div>
+              <div class="form-group">
+                <label for="registerRole">Soy</label>
+                <select id="registerRole">
+                  <option value="customer">Cliente</option>
+                  <option value="merchant">Comercio</option>
+                  <option value="rider">Motorizado</option>
+                </select>
+              </div>
+              <div class="form-group hidden" id="businessGroup">
+                <label for="registerBusinessName">Nombre del comercio</label>
+                <input id="registerBusinessName" type="text" placeholder="Mi comercio" />
+              </div>
+              <div class="auth-actions">
+                <button type="submit" class="primary">Crear cuenta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="auth-switch">
+          <span id="toggleToRegister">¿No tienes cuenta? Regístrate</span>
+          <span id="toggleToLogin" class="hidden">¿Ya tienes cuenta? Inicia sesión</span>
+        </div>
+      </section>
+
+      <section id="main-screen" class="hidden">
+        <div class="sidebar">
+          <button class="nav-btn active" data-view="customer">Cliente</button>
+          <button class="nav-btn" data-view="merchant">Comercio</button>
+          <button class="nav-btn" data-view="rider">Motorizado</button>
+        </div>
+        <div class="panel">
+          <div class="panel__header">
+            <h2>Panel</h2>
+            <div>
+              <span id="currentRole">Delivery Pro</span>
+              <span class="notification-badge" id="notificationBadge"></span>
+            </div>
+          </div>
+        </div>
+        <div class="content" id="appContent"></div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast success"></div>
+  <script type="module" src="app.js"></script>
+  <script>
+    document.getElementById('registerRole').addEventListener('change', (event) => {
+      const role = event.target.value;
+      const businessGroup = document.getElementById('businessGroup');
+      if (role === 'merchant') {
+        businessGroup.classList.remove('hidden');
+      } else {
+        businessGroup.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
