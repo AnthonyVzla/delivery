@@ -1,4 +1,4 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/module/supabase.js';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/index.mjs';
 
 const SUPABASE_URL = 'https://pwiqiinajpyrmhdhgobx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3aXFpaW5hanB5cm1oZGhnb2J4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI4NDMzODQsImV4cCI6MjA5ODQxOTM4NH0.eDbE4-1KyQ-XiEnRzbJlMcpgb06JikSu67e4FzVOUJM';
